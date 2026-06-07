@@ -56,7 +56,8 @@ export async function convertCurrency(
     fromCurrency: string,
     toCurrency: string,
 ): Promise<number> {
-    if (fromCurrency.toUpperCase() === toCurrency.toUpperCase()) return amount;
+    if (fromCurrency.toUpperCase() === toCurrency.toUpperCase())
+        return Number(amount);
 
     const rates = await getRates();
     const fromRate = rates[fromCurrency.toUpperCase()];
@@ -65,8 +66,7 @@ export async function convertCurrency(
     if (!fromRate) throw new Error(`Unknown currency: ${fromCurrency}`);
     if (!toRate) throw new Error(`Unknown currency: ${toCurrency}`);
 
-    // Convert via USD base
-    const amountInUSD = amount / fromRate;
+    const amountInUSD = Number(amount) / fromRate;
     const converted = amountInUSD * toRate;
     return Math.round(converted * 100) / 100;
 }

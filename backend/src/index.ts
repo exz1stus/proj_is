@@ -4,7 +4,17 @@ import ENV from "./env.js";
 import authRouter from "./routes/auth.js";
 import inventoryRouter from "./routes/inventory.js";
 
+import cors from "cors";
+
 const app = express();
+
+app.use(
+    cors({
+        origin: "*", // For development. Specify your exact domains in production!
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    }),
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
