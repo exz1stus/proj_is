@@ -81,7 +81,7 @@ const Dashboard = () => {
                 <h1 style={{ margin: 0, fontSize: '1.5rem', color: '#333' }}>System Monitorowania Stanu Magazynowego</h1>
                 <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                     <span style={{ fontWeight: '500' }}>Zalogowany: Admin</span>
-                    <button onClick={handleLogout} style={{ padding: '8px 16px', backgroundColor: '#fff', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>Wyloguj</button>
+                    <button onClick={handleLogout} style={{ padding: '8px 16px', backgroundColor: '#000', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}>Wyloguj</button>
                 </div>
             </header>
 
@@ -105,7 +105,7 @@ const Dashboard = () => {
                     </div>
                     <div style={{ width: '100px' }}>
                         <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.9rem', fontWeight: 'bold' }}>Waluta</label>
-                        <select value={filters.displayCurrency} onChange={(e) => setFilters({...filters, displayCurrency: e.target.value})} style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff' }}>
+                        <select value={filters.displayCurrency} onChange={(e) => setFilters({...filters, displayCurrency: e.target.value})} style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#000' }}>
                             <option value="PLN">PLN</option>
                             <option value="USD">USD</option>
                             <option value="EUR">EUR</option>
@@ -119,7 +119,7 @@ const Dashboard = () => {
             <section style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
                     <h2 style={{ margin: 0, fontSize: '1.25rem' }}>Aktualny Stan Magazynu</h2>
-                    <button type="button" onClick={() => alert('Wymóg integracyjny eksportu zostanie obsłużony przez endpoint backendu.')} style={{ padding: '6px 12px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#fff', cursor: 'pointer' }}>Wyeksportuj Dane (JSON/XML)</button>
+                    <button type="button" onClick={() => alert('Wymóg integracyjny eksportu zostanie obsłużony przez endpoint backendu.')} style={{ padding: '6px 12px', border: '1px solid #ccc', borderRadius: '4px', backgroundColor: '#000', cursor: 'pointer' }}>Wyeksportuj Dane (JSON/XML)</button>
                 </div>
                 <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
                     <thead>
