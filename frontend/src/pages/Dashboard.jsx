@@ -16,18 +16,14 @@ const Dashboard = () => {
         maxPrice: "",
     });
 
-    // Prawdziwa funkcja pobierająca z backendu (obsługuje REST i filtry)
     const fetchInventory = async () => {
         try {
-            // Czyszczenie filtrów z pustych ciągów znaków
             const params = Object.fromEntries(
                 Object.entries(filters).filter(([_, v]) => v !== ""),
             );
 
-            // Pobieranie danych z backendu z parametrami w URL query string
             const response = await api.get("/inventory/search", { params });
 
-            // Oczekiwanie struktury zgodnej z InventorySummaryResponse
             setItems(response.data.items || []);
             setSummary(response.data.summary || null);
         } catch (error) {

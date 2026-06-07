@@ -11,5 +11,7 @@ echo "✅  PostgreSQL is up"
 echo "🔄  Running Prisma migrations..."
 npx prisma migrate deploy
 
+npx tsx prisma/seed.ts
+
 echo "🚀  Starting server..."
 exec node dist/index.js
