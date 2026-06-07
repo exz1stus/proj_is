@@ -9,14 +9,11 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            // Strzał do prawdziwego endpointu logowania
             const response = await api.post("/auth/login", formData);
 
-            // Jeśli backend zwraca token JWT, zapisujemy go w pamięci podręcznej
             if (response.data && response.data.token) {
                 localStorage.setItem("token", response.data.token);
             } else if (response.data && response.data.success) {
-                // Alternatywny fallback, jeśli kolega ustawił inny format odpowiedzi
                 localStorage.setItem("token", "authenticated-session");
             }
 
